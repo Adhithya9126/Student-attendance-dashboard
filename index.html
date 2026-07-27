@@ -3,71 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance Dashboard</title>
+    <title>Attendance Management System</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <!-- Header -->
-        <header class="card">
-            <h1>Student Attendance</h1>
-            <span class="date" id="display-date"></span>
-            <!-- Add this line inside your <header> -->
-<button id="reset-btn" class="btn-reset">Reset Attendance</button>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <ul class="nav-links">
+            <li class="active">Mark Attendance</li>
+            <li>Manage Students</li>
+            <li>Settings</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header class="header">
+            <h1>Daily Attendance</h1>
+            <div class="date-picker">
+                <input type="date" value="2026-07-25">
+            </div>
         </header>
 
-        <!-- Stats -->
-        <div class="stats">
-            <div class="stat-card">
-                <h3>Total</h3>
-                <p id="total-count">0</p>
+        <div class="container">
+            
+            <!-- Statistics Indicator Panel -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Students</h3>
+                    <p class="stat-value">65</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Present</h3>
+                    <p class="stat-value present-text">65</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Absent</h3>
+                    <p class="stat-value absent-text">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>OD</h3>
+                    <p class="stat-value od-text">0</p>
+                </div>
             </div>
-            <div class="stat-card present">
-                <h3>Present</h3>
-                <p id="present-count">0</p>
-            </div>
-            <div class="stat-card absent">
-                <h3>Absent</h3>
-                <p id="absent-count">0</p>
-            </div>
-            <div class="stat-card od">
-                <h3>On Duty</h3>
-                <p id="od-count">0</p>
+
+            <div class="card">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Roll Number</th>
+                            <th>Student Name</th>
+                            <th>Department</th>
+                            <th>Status (Mark)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 65 Generated Student Rows -->
+                        <tr><td>#24UAM101</td><td><div class="student-info"><div class="avatar">AS</div><span>Aarthi S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM101" class="present" checked> Present</label><label><input type="radio" name="status_24UAM101" class="absent"> Absent</label><label><input type="radio" name="status_24UAM101" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM102</td><td><div class="student-info"><div class="avatar">AT</div><span>Abisek T V</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM102" class="present" checked> Present</label><label><input type="radio" name="status_24UAM102" class="absent"> Absent</label><label><input type="radio" name="status_24UAM102" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM103</td><td><div class="student-info"><div class="avatar">AS</div><span>Abishek S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM103" class="present" checked> Present</label><label><input type="radio" name="status_24UAM103" class="absent"> Absent</label><label><input type="radio" name="status_24UAM103" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM104</td><td><div class="student-info"><div class="avatar">AS</div><span>Adhithya S P</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM104" class="present" checked> Present</label><label><input type="radio" name="status_24UAM104" class="absent"> Absent</label><label><input type="radio" name="status_24UAM104" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM105</td><td><div class="student-info"><div class="avatar">AM</div><span>Aishwarya M</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM105" class="present" checked> Present</label><label><input type="radio" name="status_24UAM105" class="absent"> Absent</label><label><input type="radio" name="status_24UAM105" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM106</td><td><div class="student-info"><div class="avatar">AA</div><span>Akshayaa A S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM106" class="present" checked> Present</label><label><input type="radio" name="status_24UAM106" class="absent"> Absent</label><label><input type="radio" name="status_24UAM106" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM107</td><td><div class="student-info"><div class="avatar">AA</div><span>Angelina A</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM107" class="present" checked> Present</label><label><input type="radio" name="status_24UAM107" class="absent"> Absent</label><label><input type="radio" name="status_24UAM107" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM108</td><td><div class="student-info"><div class="avatar">AS</div><span>Anish Suriya J</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM108" class="present" checked> Present</label><label><input type="radio" name="status_24UAM108" class="absent"> Absent</label><label><input type="radio" name="status_24UAM108" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM109</td><td><div class="student-info"><div class="avatar">AV</div><span>Archana V</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM109" class="present" checked> Present</label><label><input type="radio" name="status_24UAM109" class="absent"> Absent</label><label><input type="radio" name="status_24UAM109" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM110</td><td><div class="student-info"><div class="avatar">BS</div><span>Balamurugan S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM110" class="present" checked> Present</label><label><input type="radio" name="status_24UAM110" class="absent"> Absent</label><label><input type="radio" name="status_24UAM110" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM111</td><td><div class="student-info"><div class="avatar">BT</div><span>Bhavatharini T M</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM111" class="present" checked> Present</label><label><input type="radio" name="status_24UAM111" class="absent"> Absent</label><label><input type="radio" name="status_24UAM111" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM112</td><td><div class="student-info"><div class="avatar">DR</div><span>Dharshini R</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM112" class="present" checked> Present</label><label><input type="radio" name="status_24UAM112" class="absent"> Absent</label><label><input type="radio" name="status_24UAM112" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM113</td><td><div class="student-info"><div class="avatar">DR</div><span>Dharshini R</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM113" class="present" checked> Present</label><label><input type="radio" name="status_24UAM113" class="absent"> Absent</label><label><input type="radio" name="status_24UAM113" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM114</td><td><div class="student-info"><div class="avatar">DN</div><span>Dharunika N</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM114" class="present" checked> Present</label><label><input type="radio" name="status_24UAM114" class="absent"> Absent</label><label><input type="radio" name="status_24UAM114" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM115</td><td><div class="student-info"><div class="avatar">DK</div><span>Dinesh Kumar S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM115" class="present" checked> Present</label><label><input type="radio" name="status_24UAM115" class="absent"> Absent</label><label><input type="radio" name="status_24UAM115" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM116</td><td><div class="student-info"><div class="avatar">EK</div><span>Ezhilan K</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM116" class="present" checked> Present</label><label><input type="radio" name="status_24UAM116" class="absent"> Absent</label><label><input type="radio" name="status_24UAM116" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM117</td><td><div class="student-info"><div class="avatar">GA</div><span>Gogul Aananth Y</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM117" class="present" checked> Present</label><label><input type="radio" name="status_24UAM117" class="absent"> Absent</label><label><input type="radio" name="status_24UAM117" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM118</td><td><div class="student-info"><div class="avatar">GG</div><span>Gopika G</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM118" class="present" checked> Present</label><label><input type="radio" name="status_24UAM118" class="absent"> Absent</label><label><input type="radio" name="status_24UAM118" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM119</td><td><div class="student-info"><div class="avatar">HS</div><span>Harikrishnan S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM119" class="present" checked> Present</label><label><input type="radio" name="status_24UAM119" class="absent"> Absent</label><label><input type="radio" name="status_24UAM119" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM120</td><td><div class="student-info"><div class="avatar">HG</div><span>Harisbalaji G</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM120" class="present" checked> Present</label><label><input type="radio" name="status_24UAM120" class="absent"> Absent</label><label><input type="radio" name="status_24UAM120" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM121</td><td><div class="student-info"><div class="avatar">HP</div><span>Hemaprabu P</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM121" class="present" checked> Present</label><label><input type="radio" name="status_24UAM121" class="absent"> Absent</label><label><input type="radio" name="status_24UAM121" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM123</td><td><div class="student-info"><div class="avatar">KV</div><span>Karnika V</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM123" class="present" checked> Present</label><label><input type="radio" name="status_24UAM123" class="absent"> Absent</label><label><input type="radio" name="status_24UAM123" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM124</td><td><div class="student-info"><div class="avatar">KM</div><span>Karthikeyan M</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM124" class="present" checked> Present</label><label><input type="radio" name="status_24UAM124" class="absent"> Absent</label><label><input type="radio" name="status_24UAM124" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM125</td><td><div class="student-info"><div class="avatar">KS</div><span>Keerthanapriya S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM125" class="present" checked> Present</label><label><input type="radio" name="status_24UAM125" class="absent"> Absent</label><label><input type="radio" name="status_24UAM125" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM126</td><td><div class="student-info"><div class="avatar">KN</div><span>Krithika N</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM126" class="present" checked> Present</label><label><input type="radio" name="status_24UAM126" class="absent"> Absent</label><label><input type="radio" name="status_24UAM126" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM127</td><td><div class="student-info"><div class="avatar">MD</div><span>Madhanraj D</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM127" class="present" checked> Present</label><label><input type="radio" name="status_24UAM127" class="absent"> Absent</label><label><input type="radio" name="status_24UAM127" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM128</td><td><div class="student-info"><div class="avatar">MV</div><span>Maduravalli V</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM128" class="present" checked> Present</label><label><input type="radio" name="status_24UAM128" class="absent"> Absent</label><label><input type="radio" name="status_24UAM128" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM129</td><td><div class="student-info"><div class="avatar">MN</div><span>Manujana N</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM129" class="present" checked> Present</label><label><input type="radio" name="status_24UAM129" class="absent"> Absent</label><label><input type="radio" name="status_24UAM129" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM130</td><td><div class="student-info"><div class="avatar">MR</div><span>Meerasoundharya R</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM130" class="present" checked> Present</label><label><input type="radio" name="status_24UAM130" class="absent"> Absent</label><label><input type="radio" name="status_24UAM130" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM131</td><td><div class="student-info"><div class="avatar">MN</div><span>Mithraa N</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM131" class="present" checked> Present</label><label><input type="radio" name="status_24UAM131" class="absent"> Absent</label><label><input type="radio" name="status_24UAM131" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM132</td><td><div class="student-info"><div class="avatar">MM</div><span>Mohamed Mydeen J</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM132" class="present" checked> Present</label><label><input type="radio" name="status_24UAM132" class="absent"> Absent</label><label><input type="radio" name="status_24UAM132" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM133</td><td><div class="student-info"><div class="avatar">MM</div><span>Mohammed Minhaj A</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM133" class="present" checked> Present</label><label><input type="radio" name="status_24UAM133" class="absent"> Absent</label><label><input type="radio" name="status_24UAM133" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM134</td><td><div class="student-info"><div class="avatar">NS</div><span>Nandhini S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM134" class="present" checked> Present</label><label><input type="radio" name="status_24UAM134" class="absent"> Absent</label><label><input type="radio" name="status_24UAM134" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM135</td><td><div class="student-info"><div class="avatar">NA</div><span>Nithish A</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM135" class="present" checked> Present</label><label><input type="radio" name="status_24UAM135" class="absent"> Absent</label><label><input type="radio" name="status_24UAM135" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM136</td><td><div class="student-info"><div class="avatar">NS</div><span>Niveda Sree Dhandapani</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM136" class="present" checked> Present</label><label><input type="radio" name="status_24UAM136" class="absent"> Absent</label><label><input type="radio" name="status_24UAM136" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM137</td><td><div class="student-info"><div class="avatar">PP</div><span>Praveen P</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM137" class="present" checked> Present</label><label><input type="radio" name="status_24UAM137" class="absent"> Absent</label><label><input type="radio" name="status_24UAM137" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM138</td><td><div class="student-info"><div class="avatar">RG</div><span>Ramya G</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM138" class="present" checked> Present</label><label><input type="radio" name="status_24UAM138" class="absent"> Absent</label><label><input type="radio" name="status_24UAM138" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM139</td><td><div class="student-info"><div class="avatar">RK</div><span>Ranjith Kumar K</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM139" class="present" checked> Present</label><label><input type="radio" name="status_24UAM139" class="absent"> Absent</label><label><input type="radio" name="status_24UAM139" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM140</td><td><div class="student-info"><div class="avatar">RT</div><span>Rathish T</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM140" class="present" checked> Present</label><label><input type="radio" name="status_24UAM140" class="absent"> Absent</label><label><input type="radio" name="status_24UAM140" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM141</td><td><div class="student-info"><div class="avatar">RS</div><span>Rithika S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM141" class="present" checked> Present</label><label><input type="radio" name="status_24UAM141" class="absent"> Absent</label><label><input type="radio" name="status_24UAM141" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM142</td><td><div class="student-info"><div class="avatar">RK</div><span>Rithish K</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM142" class="present" checked> Present</label><label><input type="radio" name="status_24UAM142" class="absent"> Absent</label><label><input type="radio" name="status_24UAM142" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM143</td><td><div class="student-info"><div class="avatar">RV</div><span>Roshmita V</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM143" class="present" checked> Present</label><label><input type="radio" name="status_24UAM143" class="absent"> Absent</label><label><input type="radio" name="status_24UAM143" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM144</td><td><div class="student-info"><div class="avatar">SK</div><span>Sairam K</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM144" class="present" checked> Present</label><label><input type="radio" name="status_24UAM144" class="absent"> Absent</label><label><input type="radio" name="status_24UAM144" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM145</td><td><div class="student-info"><div class="avatar">SB</div><span>Sandhya B</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM145" class="present" checked> Present</label><label><input type="radio" name="status_24UAM145" class="absent"> Absent</label><label><input type="radio" name="status_24UAM145" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM146</td><td><div class="student-info"><div class="avatar">SK</div><span>Sanjay K</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM146" class="present" checked> Present</label><label><input type="radio" name="status_24UAM146" class="absent"> Absent</label><label><input type="radio" name="status_24UAM146" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM147</td><td><div class="student-info"><div class="avatar">SM</div><span>Santhiya M</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM147" class="present" checked> Present</label><label><input type="radio" name="status_24UAM147" class="absent"> Absent</label><label><input type="radio" name="status_24UAM147" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM148</td><td><div class="student-info"><div class="avatar">SR</div><span>Shakthi Rithanya S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM148" class="present" checked> Present</label><label><input type="radio" name="status_24UAM148" class="absent"> Absent</label><label><input type="radio" name="status_24UAM148" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM149</td><td><div class="student-info"><div class="avatar">SR</div><span>Shalini R</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM149" class="present" checked> Present</label><label><input type="radio" name="status_24UAM149" class="absent"> Absent</label><label><input type="radio" name="status_24UAM149" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM150</td><td><div class="student-info"><div class="avatar">SN</div><span>Sheik Natharsha A</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM150" class="present" checked> Present</label><label><input type="radio" name="status_24UAM150" class="absent"> Absent</label><label><input type="radio" name="status_24UAM150" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM151</td><td><div class="student-info"><div class="avatar">SS</div><span>Shwetha S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM151" class="present" checked> Present</label><label><input type="radio" name="status_24UAM151" class="absent"> Absent</label><label><input type="radio" name="status_24UAM151" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM152</td><td><div class="student-info"><div class="avatar">SA</div><span>Sivaram A M</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM152" class="present" checked> Present</label><label><input type="radio" name="status_24UAM152" class="absent"> Absent</label><label><input type="radio" name="status_24UAM152" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM153</td><td><div class="student-info"><div class="avatar">SM</div><span>Sowmya M</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM153" class="present" checked> Present</label><label><input type="radio" name="status_24UAM153" class="absent"> Absent</label><label><input type="radio" name="status_24UAM153" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM154</td><td><div class="student-info"><div class="avatar">SS</div><span>Sowmya S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM154" class="present" checked> Present</label><label><input type="radio" name="status_24UAM154" class="absent"> Absent</label><label><input type="radio" name="status_24UAM154" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM155</td><td><div class="student-info"><div class="avatar">SN</div><span>Sree Nivetha N</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM155" class="present" checked> Present</label><label><input type="radio" name="status_24UAM155" class="absent"> Absent</label><label><input type="radio" name="status_24UAM155" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM156</td><td><div class="student-info"><div class="avatar">SV</div><span>Sri Vatsan S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM156" class="present" checked> Present</label><label><input type="radio" name="status_24UAM156" class="absent"> Absent</label><label><input type="radio" name="status_24UAM156" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM157</td><td><div class="student-info"><div class="avatar">SP</div><span>Sriharipriya P</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM157" class="present" checked> Present</label><label><input type="radio" name="status_24UAM157" class="absent"> Absent</label><label><input type="radio" name="status_24UAM157" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM158</td><td><div class="student-info"><div class="avatar">SK</div><span>Srimathi K</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM158" class="present" checked> Present</label><label><input type="radio" name="status_24UAM158" class="absent"> Absent</label><label><input type="radio" name="status_24UAM158" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM159</td><td><div class="student-info"><div class="avatar">SR</div><span>Sruthi R</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM159" class="present" checked> Present</label><label><input type="radio" name="status_24UAM159" class="absent"> Absent</label><label><input type="radio" name="status_24UAM159" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM160</td><td><div class="student-info"><div class="avatar">VS</div><span>Vaishnavi S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM160" class="present" checked> Present</label><label><input type="radio" name="status_24UAM160" class="absent"> Absent</label><label><input type="radio" name="status_24UAM160" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM161</td><td><div class="student-info"><div class="avatar">VK</div><span>Varun K J</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM161" class="present" checked> Present</label><label><input type="radio" name="status_24UAM161" class="absent"> Absent</label><label><input type="radio" name="status_24UAM161" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM162</td><td><div class="student-info"><div class="avatar">VK</div><span>Vignesh K</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM162" class="present" checked> Present</label><label><input type="radio" name="status_24UAM162" class="absent"> Absent</label><label><input type="radio" name="status_24UAM162" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM163</td><td><div class="student-info"><div class="avatar">VR</div><span>Vignesh Raj S</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM163" class="present" checked> Present</label><label><input type="radio" name="status_24UAM163" class="absent"> Absent</label><label><input type="radio" name="status_24UAM163" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM601</td><td><div class="student-info"><div class="avatar">HP</div><span>Hari Priya J</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM601" class="present" checked> Present</label><label><input type="radio" name="status_24UAM601" class="absent"> Absent</label><label><input type="radio" name="status_24UAM601" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM602</td><td><div class="student-info"><div class="avatar">SP</div><span>Siddharth P</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM602" class="present" checked> Present</label><label><input type="radio" name="status_24UAM602" class="absent"> Absent</label><label><input type="radio" name="status_24UAM602" class="od"> OD</label></div></td></tr>
+                        <tr><td>#24UAM701</td><td><div class="student-info"><div class="avatar">KM</div><span>Kishore M</span></div></td><td>B.E. CSE (AI & ML)</td><td><div class="status-options"><label><input type="radio" name="status_24UAM701" class="present" checked> Present</label><label><input type="radio" name="status_24UAM701" class="absent"> Absent</label><label><input type="radio" name="status_24UAM701" class="od"> OD</label></div></td></tr>
+                    </tbody>
+                </table>
+
+                <div class="actions">
+                    <button class="btn-submit">Save Attendance</button>
+                </div>
             </div>
         </div>
+    </main>
 
-        <!-- Add Student Form -->
-        <div class="card">
-            <h2>Manage Students</h2>
-            <form id="add-student-form" class="form-group">
-                <input type="text" id="roll-no" placeholder="Roll No (e.g. 24UAM101)" required>
-                <input type="text" id="student-name" placeholder="Full Name" required>
-                <input type="text" id="department" placeholder="Department (e.g. B.E.CSE(AI&ML))" required>
-                <button type="submit">Add Student</button>
-            </form>
-        </div>
-
-        <!-- Data Table -->
-        <div class="card" style="padding: 0; overflow: hidden;">
-            <table id="attendance-table">
-                <thead>
-                    <tr>
-                        <th>Roll No</th>
-                        <th>Name</th>
-                        <th>Department</th>
-                        <th>Status</th>
-                        <th>Mark Attendance</th>
-                        <th>Manage</th>
-                    </tr>
-                </thead>
-                <tbody id="table-body">
-                    <!-- Rows injected by JS -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
