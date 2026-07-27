@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header class="card">
+            <h1>Student Attendance</h1>
+            <span class="date" id="display-date"></span>
+            <!-- Add this line inside your <header> -->
+<button id="reset-btn" class="btn-reset">Reset Attendance</button>
+        </header>
+
+        <!-- Stats -->
+        <div class="stats">
+            <div class="stat-card">
+                <h3>Total</h3>
+                <p id="total-count">0</p>
+            </div>
+            <div class="stat-card present">
+                <h3>Present</h3>
+                <p id="present-count">0</p>
+            </div>
+            <div class="stat-card absent">
+                <h3>Absent</h3>
+                <p id="absent-count">0</p>
+            </div>
+            <div class="stat-card od">
+                <h3>On Duty</h3>
+                <p id="od-count">0</p>
+            </div>
+        </div>
+
+        <!-- Add Student Form -->
+        <div class="card">
+            <h2>Manage Students</h2>
+            <form id="add-student-form" class="form-group">
+                <input type="text" id="roll-no" placeholder="Roll No (e.g. 24UAM101)" required>
+                <input type="text" id="student-name" placeholder="Full Name" required>
+                <input type="text" id="department" placeholder="Department (e.g. B.E.CSE(AI&ML))" required>
+                <button type="submit">Add Student</button>
+            </form>
+        </div>
+
+        <!-- Data Table -->
+        <div class="card" style="padding: 0; overflow: hidden;">
+            <table id="attendance-table">
+                <thead>
+                    <tr>
+                        <th>Roll No</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                        <th>Status</th>
+                        <th>Mark Attendance</th>
+                        <th>Manage</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                    <!-- Rows injected by JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
